@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -6,8 +9,8 @@
   <artifactId>truezip-maven-plugin</artifactId>
   <packaging>pom</packaging>
   <version>0.1-SNAPSHOT</version>
-  <name>Maven TrueZIP Test</name>
-  <url>https://github.com/khmarbaise/Maven-Echo-Plugin</url>
+  <name>truezip-maven-test</name>
+  <url>https://github.com/khmarbaise/truezip-maven-test</url>
 
   <inceptionYear>2012</inceptionYear>
 
@@ -52,101 +55,101 @@
 
 
   <build>
-	 <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>wagon-maven-plugin</artifactId>
-            <version>1.0-beta-3</version>
-            <executions>
-              <execution>
-                <id>download-maven-2.0.11</id>
-                <phase>prepare-package</phase>
-                <goals>
-                  <goal>download-single</goal>
-                </goals>
-                <configuration>
-                  <url>http://archive.apache.org/dist/maven/binaries/</url>
-                  <fromFile>apache-maven-2.0.11-bin.tar.gz</fromFile>
-                  <toDir>${project.build.directory}/maven/download/</toDir>
-                </configuration>
-              </execution>
-              <execution>
-                <id>download-maven-2.2.1</id>
-                <phase>prepare-package</phase>
-                <goals>
-                  <goal>download-single</goal>
-                </goals>
-                <configuration>
-                  <url>http://archive.apache.org/dist/maven/binaries/</url>
-                  <fromFile>apache-maven-2.2.1-bin.tar.gz</fromFile>
-                  <toDir>${project.build.directory}/maven/download/</toDir>
-                </configuration>
-              </execution>
-              <execution>
-                <id>download-maven-3.0.3</id>
-                <phase>prepare-package</phase>
-                <goals>
-                  <goal>download-single</goal>
-                </goals>
-                <configuration>
-                  <url>http://archive.apache.org/dist/maven/binaries/</url>
-                  <fromFile>apache-maven-3.0.3-bin.tar.gz</fromFile>
-                  <toDir>${project.build.directory}/maven/download/</toDir>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <version>1.0-beta-3</version>
+        <executions>
+          <execution>
+            <id>download-maven-2.0.11</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <url>http://archive.apache.org/dist/maven/binaries/</url>
+              <fromFile>apache-maven-2.0.11-bin.tar.gz</fromFile>
+              <toDir>${project.build.directory}/maven/download/</toDir>
+            </configuration>
+          </execution>
+          <execution>
+            <id>download-maven-2.2.1</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <url>http://archive.apache.org/dist/maven/binaries/</url>
+              <fromFile>apache-maven-2.2.1-bin.tar.gz</fromFile>
+              <toDir>${project.build.directory}/maven/download/</toDir>
+            </configuration>
+          </execution>
+          <execution>
+            <id>download-maven-3.0.3</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <url>http://archive.apache.org/dist/maven/binaries/</url>
+              <fromFile>apache-maven-3.0.3-bin.tar.gz</fromFile>
+              <toDir>${project.build.directory}/maven/download/</toDir>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
 
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>truezip-maven-plugin</artifactId>
-            <version>1.0-beta-6</version>
-            <executions>
-              <execution>
-                <id>extract-maven-2.0.11</id>
-                <goals>
-                  <goal>copy</goal>
-                </goals>
-                <phase>prepare-package</phase>
-                <configuration>
-                  <fileset>
-                    <directory>${project.build.directory}/maven/download/apache-maven-2.0.11-bin.tar.gz</directory>
-                    <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
-                  </fileset>
-                </configuration>
-              </execution>
-              <execution>
-                <id>extract-maven-2.2.1</id>
-                <goals>
-                  <goal>copy</goal>
-                </goals>
-                <phase>prepare-package</phase>
-                <configuration>
-                  <fileset>
-                    <directory>${project.build.directory}/maven/download/apache-maven-2.2.1-bin.tar.gz</directory>
-                    <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
-                  </fileset>
-                </configuration>
-              </execution>
-              <execution>
-                <id>extract-maven-3.0.3</id>
-                <goals>
-                  <goal>copy</goal>
-                </goals>
-                <phase>prepare-package</phase>
-                <configuration>
-                  <fileset>
-                    <directory>${project.build.directory}/maven/download/apache-maven-3.0.3-bin.tar.gz</directory>
-                    <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
-                  </fileset>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-         </plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>truezip-maven-plugin</artifactId>
+        <version>1.0-beta-6</version>
+        <executions>
+          <execution>
+            <id>extract-maven-2.0.11</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <fileset>
+                <directory>${project.build.directory}/maven/download/apache-maven-2.0.11-bin.tar.gz</directory>
+                <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
+              </fileset>
+            </configuration>
+          </execution>
+          <execution>
+            <id>extract-maven-2.2.1</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <fileset>
+                <directory>${project.build.directory}/maven/download/apache-maven-2.2.1-bin.tar.gz</directory>
+                <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
+              </fileset>
+            </configuration>
+          </execution>
+          <execution>
+            <id>extract-maven-3.0.3</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <fileset>
+                <directory>${project.build.directory}/maven/download/apache-maven-3.0.3-bin.tar.gz</directory>
+                <outputDirectory>${project.build.directory}/maven/tools/</outputDirectory>
+              </fileset>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
 
-</build>
+  </build>
 
 </project> 
 
